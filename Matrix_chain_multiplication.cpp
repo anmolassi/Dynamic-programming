@@ -35,12 +35,12 @@ int main()
     }
     cout << "Number of steps required : ";
     cout << mat[1][n] << endl;
-    string ans = "";
-    for (int i = 0; i < n; i++)
-    {
-        char ab = 65 + i;
-        ans = ans + ab;
-    }
-    cout<<ans;
+//     string ans = "";
+//     for (int i = 0; i < n; i++)
+//     {
+//         char ab = 65 + i;
+//         ans = ans + ab;
+//     }
+//     cout<<ans;
     
 }
