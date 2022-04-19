@@ -2,6 +2,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 #include <string>
+int kv[100][100]={0};
+void printoptimalparens(int i,int j)
+{
+	if(i==j)
+	{
+		cout<<"A"<<i;
+	}
+	else
+	{
+		cout<<"(";
+		printoptimalparens(i,kv[i][j]);
+		printoptimalparens(kv[i][j]+1,j);
+		cout<<")";
+	}
+}
 int main()
 {
     int n;
@@ -9,7 +24,7 @@ int main()
     cin >> n;
     int dimen[n + 1];
     int mat[n + 1][n + 1] = {0};
-    int kv[n + 1][n + 1] = {0};
+//    int kv[n + 1][n + 1] = {0};
     int j;
     cout << "Enter the size of the matrices: ";
     for (int i = 0; i < n + 1; i++)
@@ -35,12 +50,15 @@ int main()
     }
     cout << "Number of steps required : ";
     cout << mat[1][n] << endl;
-//     string ans = "";
-//     for (int i = 0; i < n; i++)
-//     {
-//         char ab = 65 + i;
-//         ans = ans + ab;
-//     }
-//     cout<<ans;
+    for(int i=1;i<=n;i++)
+    {
+    	for(int j=i;j<=n;j++)
+    	{
+    		cout<<kv[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<"Optimal solution is: "
+    printoptimalparens(1,n);
     
 }
