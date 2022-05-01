@@ -58,7 +58,7 @@ int main()
 		}
 		cout<<endl;
 	}
-	cout<<"Optimal solution is: "
+	cout<<"Optimal solution is: ";
     printoptimalparens(1,n);
     
 }
